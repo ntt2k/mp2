@@ -13,7 +13,7 @@ class Number(BaseModel):
 @app.get("/")
 def read_num():
     with open("num.txt", "r") as f:
-        num = int(f.read())
+        num = f.read()
     return {"num": num}
 
 

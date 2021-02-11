@@ -8,7 +8,7 @@ payload = {
 		'ip_address2':  '3.93.172.163:80',
 		'load_balancer' :  'ec2-docker-fastapi-933855433.us-east-1.elb.amazonaws.com',
 		'submitterEmail':  'trungtn2@illinois.edu',
-		'secret':  'Yfvz3v3N2I1usFOL'
+		'secret':  'gTlsKhI3ELSKbdjB'
 		}
 
 r = requests.post(url, data=json.dumps(payload))

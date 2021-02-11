@@ -14,7 +14,7 @@ class Number(BaseModel):
 def read_num():
     with open("num.txt", "r") as f:
         num = f.read()
-    return str(num)
+    return str(num.strip())
 
 
 @app.post("/")

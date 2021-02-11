@@ -6,5 +6,7 @@ services:
     restart: on-failure
     build:
       context: .
+    volumes:
+      - ./app:/app
     ports:
       - "80:80"

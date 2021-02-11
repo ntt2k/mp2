@@ -21,4 +21,4 @@ def read_num():
 def save_num(n: Number):
     with open("num.txt", "w") as f:
         f.write(str(n.num))
-    return str(n.num)
+    return n.num

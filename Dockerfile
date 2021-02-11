@@ -1,3 +1,22 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8-alpine3.10
+# pull official base image
+FROM python:3.8-slim
 
-COPY ./app /app
+# set work directory
+WORKDIR /usr/src/app
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV FLASK_APP app.py
+
+# install dependencies
+RUN pip install --upgrade pip
+COPY ./requirements.txt /usr/src/app/requirements.txt
+RUN pip install -r requirements.txt
+
+# copy project
+COPY . /usr/src/app/
+
+EXPOSE 5000
+
+CMD ["flask", "run", "--host=0.0.0.0"]

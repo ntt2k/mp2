@@ -7,6 +7,6 @@ services:
     build:
       context: .
     volumes:
-      - ./app:/app
+      - .:/usr/src/app
     ports:
-      - "80:80"
+      - "80:5000"
